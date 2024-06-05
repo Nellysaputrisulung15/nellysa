@@ -54,11 +54,17 @@
                       <td>{{$loop->iteration}}</td>
                       <td>{{$p->nama_prodi}}</td>
                       <td></td>
-                      <td><a href="" class="btn btn-warning">Edit</a>
-                      <a href="" class="btn btn-danger">Hapus</a>
-                      @endforeach
-                    </td>
+                      <td><a href="{{ url("prodi/$p->id/edit") }}" class="btn btn-warning">Edit</a>
+                        <form action="{{ url("prodi/$p->id") }}" method="post"
+                          class="d-inline">
+                          @method('delete')
+                          @csrf
+                      <button class="btn btn-danger" onclick="return confirm('yakin mau pergi')">Hapus</button>
+                        </form>
+                      </td>
                     </tr>
+                    @endforeach
+                    
                    
                   </tbody>
                 </table>
