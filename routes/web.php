@@ -32,4 +32,5 @@ Route::get('/data/{id}', [MahasiswaController::class, 'show']);
 // Route::get('/prodi/create', [ProdiController::class, 'create']);
 // Route::post('/prodi', [ProdiController::class, 'store']);
 
-Route::resource('prodi', prodiController::class); 
+Route::resource('prodi', prodiController::class);
+route::resource('/mahasiawa', MahasiswaController::class); 

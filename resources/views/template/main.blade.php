@@ -40,12 +40,11 @@
       </li>
      
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="mahasiswa" class="nav-link">Data Mahasiswa</a>
-      </li>
-   
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="prodi" class="nav-link">Data Prodi</a>
-      </li>
+        <a href="{{ url('mahasiswa') }}" class="nav-link">Data Mahasiswa</a>
+    </li>
+    <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{ url('prodi') }}" class="nav-link">Data Prodi</a>
+    </li>
     </ul>
 
     <!-- Right navbar links -->

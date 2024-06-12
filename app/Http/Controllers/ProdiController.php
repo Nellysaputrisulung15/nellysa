@@ -41,7 +41,7 @@ class ProdiController extends Controller
     }
     public function edit(String $id)
     {
-        $data = ['nama' => 'hitler', 'foto' =>'opp.jpeg'];
+        $data = ['nama' => 'hitler', 'foto' =>'E020322114.jpeg'];
         $prodi = Prodi::find($id);
         return view('prodi.edit', compact(['data', 'prodi']));
     }
