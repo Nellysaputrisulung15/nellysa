@@ -24,13 +24,13 @@ class DatabaseSeeder extends Seeder
         ]);
 
         prodi::factory(10)->create();
+
         Mahasiswa::create([
             'nim' => 'E020322114',
             'nama'=> 'Nellysa muntiana',
             'no_hp'=> '0895401880505',
             'alamat'=> 'Banjarmasin',
             'foto' => 'E020322114.jpeg',
-            'password' => '123',
             'prodi_id' => '1',
         ]);
 
@@ -40,11 +40,28 @@ class DatabaseSeeder extends Seeder
             'no_hp'=> '081234567890',
             'alamat'=> 'Banjarbaru',
             'foto' => 'E020322114.jpeg',
-            'password' => '123',
             'prodi_id' => '2',
         ]);  
         
         Mahasiswa::factory(10)->create();
+
+        User::create([
+            'user' => 'E020322114',
+            'password' => bcrypt( 'E020322114'),
+            'role' => 'mahasiswa'
+        ]);
+
+        User::create([
+            'user' => 'E020322333',
+            'password' => bcrypt( 'E020322333'),
+            'role' => 'mahasiswa'
+        ]);
+
+        User::create([
+            'user' => 'admin',
+            'password' => bcrypt( 'admin'),
+            'role' => 'admin'
+        ]);
         
     }
 }

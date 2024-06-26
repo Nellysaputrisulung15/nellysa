@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\ProdiController;
@@ -33,4 +34,8 @@ Route::get('/data/{id}', [MahasiswaController::class, 'show']);
 // Route::post('/prodi', [ProdiController::class, 'store']);
 
 Route::resource('prodi', prodiController::class);
-route::resource('/mahasiawa', MahasiswaController::class); 
+route::resource('/mahasiawa', MahasiswaController::class)->middleware('auth'); 
+
+route::get('/login', [LoginController::class, 'index'])->middleware('auth');
+route::post('/login', [LoginController::class, 'authenticate']);
+route::post('/logout', [LoginController::class, 'logout']);
